@@ -1,0 +1,62 @@
+command:
+  - python3.10
+  - ${program}
+  - ${args_no_boolean_flags}
+
+entity: 
+method: grid
+name: HSM_SPG_endogenous
+program: mfax/algos/hsm/algos/spg.py
+
+parameters:
+  # --- logging ---
+  debug:
+    value: false
+  log:
+    value: true
+  save:
+    value: false
+  wandb_project:
+    value: mfax
+  wandb_team:
+    value: 
+  wandb_group:
+    value: mfax
+
+  # --- environment and offline dataset ---
+  task:
+    value: endogenous
+  state_type:
+    value: states
+  discount_factor:
+    value: 0.95
+  normalize_obs:
+    value: true
+  normalize_states:
+    value: true
+  common_noise:
+    value: true
+
+  # --- hyperparameters ---
+  algo:
+    value: hsm_spg
+  seed:
+    value: 0
+  num_envs:
+    value: 8
+  num_iterations:
+    value: 200
+  lr:
+    values: [0.0001, 0.001, 0.01]
+  anneal_lr:
+    value: true
+  max_grad_norm:
+    value: 1.0
+  activation:
+    value: relu
+
+  # --- logging frequencies ---
+  debug_frequency:
+    value: 10
+  eval_frequency:
+    value: 20

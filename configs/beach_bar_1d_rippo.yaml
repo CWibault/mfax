@@ -1,0 +1,80 @@
+command:
+  - python3.10
+  - ${program}
+  - ${args_no_boolean_flags}
+
+entity: 
+method: grid
+name: RL_RIPPO_beach_bar_1d
+program: mfax/algos/rl/algos/rippo.py
+
+parameters:
+  # --- logging ---
+  debug:
+    value: false
+  evaluate:
+    value: true
+  log:
+    value: true
+  save:
+    value: false
+  wandb_project:
+    value: mfax
+  wandb_team:
+    value: 
+  wandb_group:
+    value: mfax
+
+  # --- environment and offline dataset ---
+  task:
+    value: beach_bar_1d
+  state_type:
+    value: indices
+  discount_factor:
+    value: 0.99
+  normalize_obs:
+    value: true
+  normalize_states:
+    value: true
+  common_noise:
+    value: true
+
+  # --- hyperparameters ---
+  algo:
+    value: rl_rippo
+  seed:
+    value: 0
+  num_envs:
+    value: 128
+  num_agents_per_env:
+    values: [8, 128, 1024]
+  num_steps:
+    value: 64
+  num_epochs:
+    value: 1
+  num_minibatches:
+    value: 8
+  gae_lambda:
+    value: 0.95
+  clip_eps:
+    value: 0.2
+  ent_coef:
+    values: [0.001, 0.01, 0.1]
+  vf_coef:
+    value: 0.5
+  lr:
+    values: [0.0001, 0.001, 0.01]
+  anneal_lr:
+    value: true
+  max_grad_norm:
+    value: 1.0
+  activation:
+    value: relu
+
+  # --- logging frequencies ---
+  num_iterations:
+    value: 200
+  num_updates_per_iteration:
+    values: [50, 100, 200]
+  eval_frequency:
+    value: 20

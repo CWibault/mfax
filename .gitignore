@@ -1,0 +1,4 @@
+wandb
+runs
+*.pyc
+__pycache__

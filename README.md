@@ -16,7 +16,7 @@ Currently, all environments are implemented with both a push-forward and sample-
 
 | Environment     | Base Class | Push-forward Wrapper | Sample-based Wrapper |
 | --- | --- | --- | --- |
-| Linear Quadratic| [`base_lq`](mfax/envs/base/toy/linear_quadratic.py) | [`pushforward_lq`](mfax/envs/pushforward/toy/linear_quadratic_1d.py) | [`sample_lq`](mfax/envs/sample/toy/linear_quadratic.py) |
+| Linear Quadratic| [`base_lq`](mfax/envs/base/toy/linear_quadratic.py) | [`pushforward_lq`](mfax/envs/pushforward/toy/linear_quadratic.py) | [`sample_lq`](mfax/envs/sample/toy/linear_quadratic.py) |
 | Beach Bar 1D    | [`base_bb`](mfax/envs/base/toy/beach_bar_1d.py)     | [`pushforward_bb`](mfax/envs/pushforward/toy/beach_bar_1d.py)   | [`sample_bb`](mfax/envs/sample/toy/beach_bar_1d.py)         |
 | Macroeconomics  | [`base_macro`](mfax/envs/base/macro/endogenous.py)    | [`pushforward_macro`](mfax/envs/pushforward/macro/endogenous.py)   | [`sample_macro`](mfax/envs/sample/macro/endogenous.py)         |
 

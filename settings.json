@@ -6,12 +6,10 @@
       "editor.defaultFormatter": "charliermarsh.ruff"
     },
   
-    // Tell the Ruff extension where the "ruff" binary lives (our wrapper)
     "ruff.path": [
       "${workspaceFolder}/tools/ruff-wrapper"
     ],
   
-    // Also ensure fix-on-save is triggered (some setups rely on this)
     "editor.codeActionsOnSave": {
       "source.fixAll": true
     }

@@ -108,9 +108,6 @@ class BaseBeachBar1DEnvironment(BaseEnvironment):
             - jnp.abs(jnp.abs(aggregate_s.bar_loc - s) == 1)
             * (next_aggregate_s.z == 0)
             * self.n_states  # strong negative reward for being next to bar when it is about to close / closed. We used next_aggregate_s to see whether agents can learn to apprehend that the bar might close, and learn to move away prior to closure.
-            - jnp.clip(
-                jnp.log(aggregate_s.mu[state] + 1e-8) * aggregate_s.z, 0, self.n_states
-            )  # reward for being in sparse areas when bar is open
             - (jnp.abs(a) / self.n_states)
         )
         r_term = r_step
